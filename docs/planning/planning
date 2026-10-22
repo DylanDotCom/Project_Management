@@ -1,0 +1,118 @@
+# Release Plan
+
+Planning documentation for the cartoon nostalgia platform: a website where users can search for cartoons, rate them, save favourites and manage their accounts.
+
+## Table of Contents
+
+1. [Planning Figures](#planning-figures)
+2. [Product Backlog](#product-backlog)
+3. [Release Plan](#release-plan-by-sprint)
+4. [Release Burndown](#release-burndown)
+5. [Product Roadmap](#product-roadmap)
+6. [System Overview](#system-overview)
+7. [Definition of Ready](#definition-of-ready-dor)
+8. [Definition of Done](#definition-of-done-dod)
+
+## Planning Figures
+
+| Figure | Value |
+|--------|-------|
+| Total story points for epics (Marketing, Accessibility, Navigation) | 47 pts |
+| Team velocity (story points per sprint) | 10 (adjustable) |
+| Weeks to release date | 7 |
+| One-week sprints to release date | 6 |
+| Team capacity to release date (velocity × sprints) | 60 pts |
+| Take stories into the release up to | 60 pts |
+
+## Product Backlog
+
+| User Story | Story Points | Priority | Epic | Accumulated |
+|------------|--------------|----------|------|-------------|
+| Acblt-2 | 8 | 1 | Accessibility | 8 |
+| Nvgt-1 | 2 | 2 | Navigation | 10 |
+| Acblt-1 | 4 | 2 | Accessibility | 14 |
+| Mkt-1 | 3 | 2 | Marketing | 17 |
+| Nvgt-2 | 6 | 3 | Navigation | 23 |
+| Acblt-3 | 5 | 3 | Accessibility | 28 |
+| Nvgt-3 | 2 | 4 | Navigation | 30 |
+| Mkt-2 | 9 | 4 | Marketing | 39 |
+| Mkt-3 | 8 | 6 | Marketing | 47 |
+
+The full backlog is 47 points, which fits within the 60-point release capacity.
+
+## Release Plan by Sprint
+
+| Sprint | Week | Stories (story points) | Total |
+|--------|------|------------------------|-------|
+| Sprint 1 | 25 Oct – 1 Nov (week 7) | Acblt-2 (8) | 8 |
+| Sprint 2 | 2 Nov – 8 Nov (week 8) | Nvgt-1 (2), Acblt-1 (4), Mkt-1 (3) | 9 |
+| Sprint 3 | 9 Nov – 15 Nov (week 9) | Nvgt-2 (6), Acblt-3 (5) | 11 |
+| Sprint 4 | 16 Nov – 22 Nov (week 10) | Nvgt-3 (2), Mkt-2 (9) | 11 |
+| Sprint 5 | 23 Nov – 29 Nov (week 11) | Testing of workflows | 0 |
+| Sprint 6 | 30 Nov – 6 Dec (week 12) | Mkt-3 (8) | 8 |
+
+## Release Burndown
+
+![Release burndown chart showing ideal, planned and actual story points remaining across six sprints](images/release-burndown.png)
+
+| Point in time | Ideal remaining | Planned remaining | Actual remaining |
+|---------------|-----------------|-------------------|------------------|
+| Start | 47.0 | 47 | 47 |
+| Sprint 1 | 39.2 | 39 | – |
+| Sprint 2 | 31.3 | 30 | – |
+| Sprint 3 | 23.5 | 19 | – |
+| Sprint 4 | 15.7 | 8 | – |
+| Sprint 5 | 7.8 | 8 | – |
+| Sprint 6 | 0 | 0 | – |
+
+The planned line runs ahead of the ideal line through Sprint 4, flattens in Sprint 5 (testing sprint, no story points burned) and reaches zero in Sprint 6. Actual remaining is updated at the end of each sprint.
+
+## Product Roadmap
+
+![Product roadmap timeline showing the sprints and epics from October to December](images/product-roadmap.png)
+
+The roadmap tracks the three epics (Marketing, Accessibility, Navigation) across the six sprints from 25 October to 6 December 2026. It is maintained in the project's planning tool.
+
+## System Overview
+
+**Cartoon Search and Rating System:** users search for cartoons, rate them, save them to favourites and manage their accounts. The API handles input validation, user authentication and interactions with the database.
+
+![Cartoon Search and Rating System architecture diagram showing frontend, backend and database components](images/system-architecture.png)
+
+| Layer | Component | Responsibility |
+|-------|-----------|----------------|
+| Frontend | User Browser | The interface where users interact with the platform |
+| Frontend | Home Page | Displays cartoon search, rating and related features |
+| Frontend | Login Module | Handles user login and account management |
+| Backend | API Gateway | Entry point for all client requests |
+| Backend | Authentication Service | Authenticates user credentials and returns auth status |
+| Backend | Search Service | Processes cartoon search queries |
+| Backend | Rating Service | Manages cartoon ratings |
+| Backend | Favorite Service | Manages users' favourite cartoons |
+| Backend | User Service | Manages user account details |
+| Database | MySQL Database | Stores cartoon data, user information, ratings and favourites |
+
+## Definition of Ready (DoR)
+
+A story is ready to start when we have:
+
+- [ ] Low-fi prototype
+- [ ] High-fi prototype
+- [ ] Basic framework and workspace
+- [ ] Time management for coding
+- [ ] List of what's going to give (if we fall behind schedule)
+- [ ] Basic planned features
+- [ ] Testing requirements
+
+## Definition of Done (DoD)
+
+The release is done when:
+
+- [ ] Basic features are functional
+- [ ] Mostly bug-free
+- [ ] User testing went well (users satisfied with their experience)
+- [ ] Visual design has been finalised
+- [ ] Documentation is finished
+- [ ] Product owner has approved the project
+
+See [TESTING.md](TESTING.md) for how each testing level links to the DoD.
