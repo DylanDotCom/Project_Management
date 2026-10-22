@@ -1,0 +1,118 @@
+# Coding Standards
+
+This document defines the conventions every contributor follows so the codebase stays consistent, readable and easy to maintain.
+
+## Table of Contents
+
+1. [Guiding Principles](#guiding-principles)
+2. [Programming Languages](#programming-languages)
+3. [Naming Conventions](#naming-conventions)
+4. [Formatting and Style](#formatting-and-style)
+5. [Comments and Documentation](#comments-and-documentation)
+6. [Error Handling](#error-handling)
+7. [Version Control](#version-control)
+8. [Code Review](#code-review)
+9. [Testing](#testing)
+10. [Security](#security)
+
+## Guiding Principles
+
+- **Readability first:** code is read far more often than it is written.
+- **Keep it simple:** choose the simplest solution that works (KISS).
+- **Don't repeat yourself:** extract shared logic instead of copy-pasting (DRY).
+- **Single responsibility:** each function, class or module does one thing well.
+- **Leave it better than you found it:** small cleanups are welcome in any change.
+
+## Programming Languages 
+This project requires to have API and our own database, so we decide to use PHP, as well as, HTML, CSS and JavaScript for dynamic web-development.
+- **PHP: ** 'snake_case' for functions and variables, declaring parameter and return types, **always use prepared statements**, escape output with 'htmlspecialchars()' when printing to HTMl,
+            validate input on the server even if JavaScript also validates it, keep the logic in functions that can be unit tested.
+- **HTML, CSS, JavaScript: ** semantic HTML, keep the CSS and JS in different folders, 'const'/'let' for JavaScript names.
+
+## Naming Conventions
+
+| Item                | Convention           | Example                |
+|---------------------|----------------------|------------------------|
+| Variables/functions | `camelCase`          | `getUserProfile`       |
+| Classes/components  | `PascalCase`         | `UserProfile`          |
+| Constants           | `UPPER_SNAKE_CASE`   | `MAX_LOGIN_ATTEMPTS`   |
+| Files               | `kebab-case`         | `user-profile.js`      |
+| CSS classes         | `kebab-case`         | `.card-header`         |
+
+- Use descriptive names. Prefer `userEmail` over `ue`.
+- Booleans should read as questions: `isActive`, `hasAccess`.
+- Avoid abbreviations unless they are widely understood.
+
+## Formatting and Style
+
+- Indentation: 2 spaces (no tabs).
+- Maximum line length: 100 characters.
+- Use semicolons and quotes consistently, as set by the linter.
+- One statement per line; one blank line between logical blocks.
+- Run the formatter and linter before every commit.
+
+## Comments and Documentation
+
+- Explain **why**, not **what**. The code shows what it does.
+- Document every public function with its purpose, parameters and return value.
+- Remove commented-out code; version control keeps the history.
+- Mark unfinished work with `TODO:` plus your name or a ticket reference.
+
+## Error Handling
+
+- Handle errors explicitly; never swallow them silently.
+- Fail early and give clear, actionable error messages.
+- Never expose stack traces or internal details to end users.
+- Validate all input at the boundary of your system.
+
+## Version Control
+
+### Branches
+
+- `main`: stable, always deployable.
+- `feature/<short-description>`: new work.
+- `fix/<short-description>`: bug fixes.
+
+### Commit Messages
+
+Use the imperative mood and keep the first line under 72 characters:
+
+```
+Add login form validation
+Fix crash when profile image is missing
+```
+
+- Make small, focused commits.
+- Never commit secrets, credentials or large generated files.
+
+## Code Review
+
+- Every change goes through a pull request and needs at least one approval.
+- Keep pull requests small and describe what changed and why.
+- Reviewers: be constructive and specific. Authors: respond to every comment.
+- Check that tests pass and the linter is clean before requesting review.
+
+## Testing
+
+- New features and bug fixes include tests.
+- Tests are independent, repeatable and clearly named (`it_returns_error_for_empty_email`).
+- Aim for meaningful coverage of core logic rather than a coverage number alone.
+- All tests must pass before merging.
+
+## Security
+
+- Store secrets in environment variables, never in source code.
+- Sanitise and validate user input to prevent injection attacks.
+- Keep dependencies up to date and review new ones before adding.
+- Apply the principle of least privilege to accounts, tokens and permissions.
+
+## Definition of Done
+
+A change is done when:
+
+- [ ] It meets the acceptance criteria
+- [ ] It follows this document
+- [ ] Linting and formatting pass
+- [ ] Tests are added and passing
+- [ ] Documentation is updated
+- [ ] It has been reviewed and approved
