@@ -43,11 +43,11 @@ $conn = new mysqli("ProjectManagement", "root", "", "CartoonsInfo");
 
 //creating the cartoons table
 $sql = "CREATE TABLE CartoonSearch (
-    title VARCHAR(30) NOT NULL,
+    title VARCHAR(100) NOT NULL,
     id INT AUTO_INCREMENT PRIMARY KEY,
     year INT NOT NULL,
     image_path    VARCHAR(255)  NULL,
-    creator VARCHAR(30) NOT NULL,
+    creator VARCHAR(60) NOT NULL,
     genre VARCHAR(30) NOT NULL,
     rating VARCHAR(30) NOT NULL,
     runtime INT NOT NULL,
@@ -76,7 +76,7 @@ $sql = "CREATE TABLE Users (
   }
 
   //inserting data 
-  $sql = "INSERT INTO CartoonSearch (title, year, creator, genre, rating, runtime, episodes, image_path) VALUES
+  $sql = "INSERT INTO CartoonSearch (title, year, creator, rating, genre, runtime, episodes, image_path) VALUES
   ('Spongebob Squarepants', '1999', 'Stephen Hillenburg', 'TV-PG', 'comedy', '23', '272', 'spongebob.jpg'),
   ('The Simpsons', '1999', 'Matt Groening', 'TV-Y', 'comedy', '22', '684', 'simpsons.jpg'),
   ('Gravity Falls', '2012', 'Alex Hirsch', 'TV-Y7', 'Action-Adventure', '23', '40', 'gravity_falls.jpg'),

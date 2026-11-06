@@ -2,25 +2,46 @@
 <html>
    <head>
    <meta charset="utf-8">
-      <title>Project Management</title>
+      <title>Search | Gismo</title>
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <script src="bootstrap/js/bootstrap.js"></script>
 
+        <!-- our own styles -->
+        <link href="css/style_gismo.css" rel="stylesheet">
+
+         <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
    </head>
 	
    <body>
-   
-        <div id="header">
-            <ul>
-                <li><h1>Project Management</h1></li>
-				<li><a href="Home.html" >Home</a></li>
-				<li><a href="">User Login</a></li>
-				<li><a href="SearchPage.html" class = "on">Search</a></li>
-
-			</ul>
-		</div>
-		
-	</div> 
-    </div>  
-</div>	
     
-	</div>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.php"><img src="img/gismo_logo.png" alt="Logo"class="img-fluid logo"/></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link"  href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="SearchPage.php">Search</a></li>
+                        <li class="nav-item"><a class="nav-link"  href="blog_page/blog.php">Blog</a></li>
+                    </ul>
+                     
+                </div>
+                <a href="login.php" class="profile-btn" aria-label="Profile"></a>
+            </div>
+             
+        </nav>
+      
+		
+	
+    
+	
+
+     <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Gismo 2026</p></div>
+        </footer>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
+</html>

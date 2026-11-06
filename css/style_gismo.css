@@ -1,0 +1,46 @@
+
+ :root {
+            --purple-bar: #c2b0ff;
+            --sky-bg: #A4D9FF;
+            --avatar: #c050ff;
+        }
+ 
+        body {
+            background-color: var(--sky-bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+           
+        }
+
+.logo{
+  width: 150px;
+  height: 100px;
+}
+
+.profile-btn {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background-color: var(--avatar);
+            border: 5px solid #000;
+            display: block;
+            margin-left: 20px;
+}
+
+.freckle-face-regular {
+  font-family: "Freckle Face", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+ 
+
+
+  .gismo{
+    font-size: 200px;
+}    
+
+.mask{
+    color: black;
+    background-color: rgba(192, 80, 255, 0.5);
+}
