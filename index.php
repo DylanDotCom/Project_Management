@@ -4,7 +4,6 @@ include 'db_connect.php';
 
 ?>
 <!DOCTYPE html>
-<!DOCTYPE html!> 
 <html>
    <head>
    <meta charset="utf-8">
@@ -82,3 +81,4 @@ include 'db_connect.php';
 <script type="text/javascript" src="js/script.js"></script>
 	
 </body>
+</html>
