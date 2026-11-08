@@ -27,3 +27,58 @@ $(document).ready(function() {
 
 	 
 }); 
+
+//Search Page Code
+var cartoons = [];
+
+function fetchCartoons() {
+    fetch("getCartoons.php")
+    .then(response => response.json())
+    .then(data => {
+        cartoons = data;
+        console.log("Cartoons array:", cartoons);
+    })
+    .catch(error => console.error("yufol: ", error));
+}
+
+fetchCartoons();
+
+var list_cartoons = []; 
+ function showHint(substring) {
+    
+    list_cartoons = cartoons.filter(element => (element.toLowerCase()).includes(substring.toLowerCase()));
+    html_string = "";
+    if(list_cartoons.length == 1){
+        showHintInfo(list_cartoons[0]);
+    } else{
+         list_cartoons.forEach(element => {
+        html_string = html_string + "<span class = 'hover-pointer' onclick=\"showHintInfo('" + element + "')\";>" + element + "</span> | ";
+            });
+        document.getElementById("txtHint").innerHTML = "<br>Title: <br>Runtime:";
+    }
+    document.getElementById("txtHint").innerHTML = html_string;
+}
+
+function showHintInfo(str) {
+    const hintElement = document.getElementById("txtHint");
+
+    if(str.length === 0) {
+        hintElement.innerHTML = ""; 
+        return;
+    }
+
+    fetch(`getSearch.php?q=${str}`)
+    .then(response => {
+        if(!response.ok) {
+            throw new Error(`HTTP error!: ${response.status}`);
+        }
+        return response.text();
+    })
+    .then(data => {
+        hintElement.innerHTML = data;
+    })
+
+    .catch(error => {
+        console.error("iube", error);
+        hintElement.innerHTML = "Error loading hint.";})
+    }
