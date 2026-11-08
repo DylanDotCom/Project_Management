@@ -5,6 +5,7 @@
       <title>Search | Gismo</title>
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <script src="bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
         <!-- our own styles -->
         <link href="css/style_gismo.css" rel="stylesheet">
@@ -32,7 +33,13 @@
              
         </nav>
       
-		
+		 <form>
+           <div>
+            <input type = "text" name = "users" onkeyup="showHint(this.value)">
+           </div>
+       </form>
+       <span id="txtHint"></span>
+        <p>Suggestions: <span id="txtHintInfo"></span></p>
 	
     
 	
@@ -41,7 +48,6 @@
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Gismo 2026</p></div>
         </footer>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
