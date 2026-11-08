@@ -1,0 +1,75 @@
+# Testing
+
+This document describes how we test the platform, which tools we use, and how each level of testing links to our Definition of Done (DoD).
+
+## Table of Contents
+
+1. [Levels of Testing](#levels-of-testing)
+2. [Approach](#approach)
+3. [Main Points for Testing](#main-points-for-testing)
+4. [Tools](#tools)
+5. [Testing Strategy](#testing-strategy)
+
+## Levels of Testing
+
+| Level | Stage | Who tests | What is tested | Link to DoD |
+|-------|-------|-----------|----------------|-------------|
+| 1 | High-fi prototype | Stakeholders | The design and main elements of the platform | Visual design has been finalised |
+| 2 | Unreleased coded website | Software engineers / DevOps | Finding bugs and checking for security issues | Basic features are functional |
+| 3 | Released coded website | Users | How users interact with the platform and whether they run into any issues | User testing went well (users are satisfied with their experience) |
+
+### Level 1: High-fi prototype
+
+Stakeholders review the design and the main elements of the platform. This level is complete when the visual design has been finalised.
+
+### Level 2: Unreleased coded website
+
+Software engineers and DevOps look for bugs and check for security issues before anything is released. This level is complete when the basic features are functional.
+
+### Level 3: Released coded website
+
+We test with real users to see how they interact with the platform and whether they come across any issues. This level is complete when user testing has gone well and users are satisfied with their experience.
+
+## Approach
+
+We use several testing approaches:
+
+### 1. Integration testing (functional)
+
+Ensures modules work correctly together and that interfaces function as expected. For our platform this checks the API and database connection, so users can log in, store their favourite shows and rate them.
+
+### 2. System testing (functional)
+
+End-to-end testing of the full application. A tester follows the whole user flow: from the home page, to finding a show, to saving and rating their favourite.
+
+### 3. Usability testing (non-functional)
+
+Checks how easily users can interact with the platform.
+
+## Main Points for Testing
+
+- Users fully understand the steps required to successfully finish the flow on the platform.
+- People cannot access sensitive information.
+
+## Tools
+
+| Tool | Used for |
+|------|----------|
+| GitHub Codespaces | Testing the actual code |
+| Figma | Testing the user journey and spotting any issues with it |
+| Target release platform | If we decide to release on a specific platform, we will also test the code on that platform |
+
+## Testing Strategy
+
+- We test continuously on our personal branches before committing to the main branch, so that `main` is always as stable as possible.
+- We use GitHub to test the code and Figma to test the user journey.
+- **Early in the project**, we prioritise testing the core function of the website: the API and database connections.
+- **Later in the release**, we test the user-focused parts, such as navigation and convenience.
+
+## Tests in the pipeline
+'.github/workflows/test.yml'  - this checks the coe before it lands in **main**, helping our team keep the **main** stable
+        - downloads the project's code onto your machine 
+        - install Node.js version 20 and caches npm packages, so later runs are faster 
+        - run **npm ci**, which installs exactly the latest versions
+        - run unit tests with **npm test**
+        - run integration tests with **npm run test:integration**
