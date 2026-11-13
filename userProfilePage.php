@@ -13,7 +13,7 @@
             <ul>
                 <li><h1>Project Management</h1></li>
 				<li><a href="Index.html">Home</a></li>
-				<li><a href="userProfilePage.php" class='on'>User Login</a></li>
+				<li><a href="userLoginPage.php" class='on'>User Login</a></li>
 				<li><a href="SearchPage.php">Search</a></li>
 
 			</ul>

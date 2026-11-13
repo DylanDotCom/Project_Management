@@ -31,6 +31,7 @@ $(document).ready(function() {
 //Search Page Code
 var cartoons = [];
 
+
 function fetchCartoons() {
     fetch("getCartoons.php")
     .then(response => response.json())
@@ -41,20 +42,21 @@ function fetchCartoons() {
     .catch(error => console.error("yufol: ", error));
 }
 
+
+
 fetchCartoons();
 
 var list_cartoons = []; 
  function showHint(substring) {
     
-    html_string = html_string + "<img src='db_images/"+ element+".jpg' height = '300px' class = 'hover-pointer' onclick=\"showHintInfo('" + element + "')\";>" + element + "</span> | ";
+    list_cartoons = cartoons.filter(element => (element.toLowerCase()).includes(substring.toLowerCase()));
     html_string = "";
     if(list_cartoons.length == 1){
         showHintInfo(list_cartoons[0]);
     } else{
          list_cartoons.forEach(element => {
-        html_string = html_string + "<span class = 'hover-pointer' onclick=\"showHintInfo('" + element + "')\";>" + element + "</span> | ";
-            });
-        document.getElementById("txtHint").innerHTML = "<br>Title: <br>Runtime:";
+        html_string = html_string + "<img src='db_images/"+ element+".jpg' height = '300px' class = 'hover-pointer' onclick=\"showHintInfo('" + element + "')\";>" + element + "</span> | ";
+            }); 
     }
     document.getElementById("txtHint").innerHTML = html_string;
 }
@@ -82,3 +84,4 @@ function showHintInfo(str) {
         console.error("iube", error);
         hintElement.innerHTML = "Error loading hint.";})
     }
+

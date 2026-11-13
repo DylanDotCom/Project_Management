@@ -38,7 +38,7 @@ include 'db_connect.php';
                     </ul>
                      
                 </div>
-                <a href="login.php" class="profile-btn" aria-label="Profile"></a>
+                <a href="userLoginPage.php" class="profile-btn" aria-label="Profile"></a>
             </div>
              
         </nav>

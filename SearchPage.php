@@ -5,6 +5,7 @@
       <title>Search | Gismo</title>
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <script src="bootstrap/js/bootstrap.js"></script>
+        <script src="js/script.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
          <link href="css/styles.css" rel="stylesheet">
 
@@ -29,7 +30,7 @@
                     </ul>
                      
                 </div>
-                <a href="login.php" class="profile-btn" aria-label="Profile"></a>
+                <a href="userLoginPage.php" class="profile-btn" aria-label="Profile"></a>
             </div>
              
         </nav>
@@ -39,8 +40,10 @@
             <input type = "text" name = "users" onkeyup="showHint(this.value)">
            </div>
        </form>
+       <div id="txtHintOuter">
        <span id="txtHint"></span>
-        <p>Suggestions: <span id="txtHintInfo"></span></p>
+        <p>Suggestions: <span id="txtHintInfo"></span></p> 
+</div>
 	
     
 	
