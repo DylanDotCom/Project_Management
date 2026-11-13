@@ -1,4 +1,8 @@
-
+let closeModal = () => {
+    const modal = document.getElementById("login_modal");
+    modal.style.display= "none";
+    document.getElementById("backdrop").style.display = "none";
+}
 /*Show Login*/
 let showLoginModal = () => {
     let modal = document.getElementById("login_modal");
@@ -6,7 +10,7 @@ let showLoginModal = () => {
     document.getElementById("backdrop").style.display = "block";
 
     const modal_header = '<img src="bootstrap/images/sc2.png" alt="avatar" width="70px">' + 
-    '<span class="close cursor" onclick="closeModal()">&times;</span> <br> <div class="modal_content">';
+    '<button class="close cursor" onclick="closeModal()">&times;</span> <br> <div class="modal_content">';
 
     const modal_content= '<form id="login" onsubmit="return loginUser()">' +
     '<label for="username">Username:</label>' +
@@ -26,7 +30,7 @@ let showCreateUserModal = () => {
     document.getElementById("backdrop").style.display = "block";
 
     modal_header = ' <img src="bootstrap/images/sc2.png" alt="avatar" width="70px">' + 
-    '<span class="close cursor" onclick="closeModal()">&times;</span> <br> <div class="modal-content">';
+    '<button class="close cursor" onclick="closeModal()">&times;</span> <br> <div class="modal-content">';
 
     modal_content=' <form id="create" onsubmit="return createUser()">' +
     '<label for="username">Username:</label>' +
