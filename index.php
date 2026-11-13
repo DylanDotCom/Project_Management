@@ -53,7 +53,7 @@ include 'db_connect.php';
                 </h5>
                 <h5 class="mb-4">Save those you want to see.</h5>
                 <h5 class="mb-4">Tell your friends what’s good.</h5>
-                <a data-mdb-ripple-init class="btn btn-outline-light btn-lg m-2" href="login.php"
+                <a data-mdb-ripple-init class="btn btn-outline-light btn-lg m-2" href="userLoginPage.php"
                   role="button" rel="nofollow" target="_blank">Login</a>
                 <a data-mdb-ripple-init class="btn btn-outline-light btn-lg m-2" href="SearchPage.php"
                   target="_blank" role="button">Search</a>
