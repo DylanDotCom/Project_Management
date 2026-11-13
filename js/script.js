@@ -46,7 +46,7 @@ fetchCartoons();
 var list_cartoons = []; 
  function showHint(substring) {
     
-    list_cartoons = cartoons.filter(element => (element.toLowerCase()).includes(substring.toLowerCase()));
+    html_string = html_string + "<img src='db_images/"+ element+".jpg' height = '300px' class = 'hover-pointer' onclick=\"showHintInfo('" + element + "')\";>" + element + "</span> | ";
     html_string = "";
     if(list_cartoons.length == 1){
         showHintInfo(list_cartoons[0]);

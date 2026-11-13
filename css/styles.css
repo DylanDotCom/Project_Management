@@ -22,3 +22,11 @@
     font-size: 20px;
     border: #0d2bae 10px solid; 
 }
+
+#txtHintOuter {
+ border: blue 5px solid;
+ height: 310px;
+ grid-template-rows: 1;
+ overflow-y: scroll;
+ white-space: nowrap;
+}

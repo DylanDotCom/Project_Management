@@ -6,6 +6,7 @@
         <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <script src="bootstrap/js/bootstrap.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+         <link href="css/styles.css" rel="stylesheet">
 
         <!-- our own styles -->
         <link href="css/style_gismo.css" rel="stylesheet">
