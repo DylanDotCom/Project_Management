@@ -40,10 +40,10 @@
             <input type = "text" name = "users" onkeyup="showHint(this.value)">
            </div>
        </form>
-       <div id="txtHintOuter">
-       <span id="txtHint"></span>
-        <p>Suggestions: <span id="txtHintInfo"></span></p> 
-</div>
+
+	   <div class="container"><p>Suggestions: </p></div>
+        <div id="txtHintInfo" class="container"></div>
+        <div id="txtHint" class="container"></div>
 	
     
 	
