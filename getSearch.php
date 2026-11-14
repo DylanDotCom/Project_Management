@@ -8,7 +8,7 @@ if ($search === '') {
     $conn->close();
     exit;
 }
-
+//tst
 $stmt = $conn->prepare(
     "SELECT id, title, year, creator, genre, runtime, episodes, image_path
      FROM CartoonSearch
