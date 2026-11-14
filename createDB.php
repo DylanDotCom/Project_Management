@@ -111,6 +111,70 @@ if ($conn->query($sql) === TRUE) {
   echo "Error creating table: " . $conn->error;
 }
 
+
+$sql = "CREATE TABLE Episodes (
+        episode_id INT AUTO_INCREMENT PRIMARY KEY,
+        cartoon_id INT NOT NULL,
+        season INT NOT NULL DEFAULT 1,
+        episode_number INT NOT NULL,
+        title VARCHAR(150) NOT NULL,
+        image_path  VARCHAR(255)  NULL,
+        description TEXT NULL,
+        UNIQUE (cartoon_id, season, episode_number),
+        FOREIGN KEY (cartoon_id) REFERENCES CartoonSearch(id) ON DELETE CASCADE
+      ) ENGINE=InnoDB;";
+
+if ($conn->query($sql) === TRUE){
+  echo "Episodes table creates successfully<br>";
+}else{
+  echo "Error creating table: " . $conn->error;
+}
+
+//inserting episodes
+$sql = "INSERT INTO Episodes (cartoon_id, season, episode_number, title, image_path, description) VALUES
+  (1, 1, 1, 'Help Wanted', 'spongebob_s1e1.jpg', 'SpongeBob applies for a job at the Krusty Krab and tries to prove he is the right fry cook.'),
+  (1, 1, 2, 'Reef Blower', 'spongebob_s1e2.jpg', 'SpongeBob''s new reef blower causes chaos around Bikini Bottom.'),
+  (1, 1, 3, 'Tea at the Treedome', 'spongebob_s1e3.jpg', 'Sandy invites SpongeBob to her air-filled treedome for tea.'),
+  (1, 1, 4, 'Fake', 'spongebob_s1e3.jpg', 'Sandy invites SpongeBob to her air-filled treedome for tea.'),
+
+
+  (3, 1, 1, 'Tourist Trapped', 'gravity_falls_s1e1.jpg', 'Dipper and Mabel arrive in Gravity Falls, and Dipper finds a mysterious journal.'),
+  (3, 1, 2, 'The Legend of the Gobblewonker', 'gravity_falls_s1e2.jpg', 'The twins set out to find the monster rumored to live in the lake.'),
+  (3, 1, 3, 'Headhunters', 'gravity_falls_s1e3.jpg', 'Wax figures at the Mystery Shack lose their heads, and Dipper investigates.'),
+
+  (8, 1, 1, 'The Boy in the Iceberg', 'avatar_s1e1.jpg', 'Katara and Sokka find Aang frozen in an iceberg and free him.'),
+  (8, 1, 2, 'The Avatar Returns', 'avatar_s1e2.jpg', 'Aang learns he is the Avatar and the group is chased by the Fire Nation.'),
+  (8, 1, 3, 'The Southern Air Temple', 'avatar_s1e3.jpg', 'Aang returns to his old home and faces what happened to his people.'),
+
+  (20, 1, 1, 'Rollercoaster', 'phineas_ferb_s1e1.jpg', 'The brothers build a huge rollercoaster in their backyard while Candace tries to bust them.'),
+  (20, 1, 3, 'Journey to the Center of Candace', 'phineas_ferb_s1e3.jpg', 'Phineas and Ferb shrink down and travel inside their sister.')
+  ;";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Episodes entries created successfully<br>";
+} else {
+  echo "Error creating episodes: " . $conn->error;
+}
+
+$sql = "CREATE TABLE Comments (
+    comment_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id    INT NOT NULL,
+    cartoon_id INT NULL,
+    episode_id INT NULL,
+    body       TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id)    REFERENCES Users(user_id)          ON DELETE CASCADE,
+    FOREIGN KEY (cartoon_id) REFERENCES CartoonSearch(id)       ON DELETE CASCADE,
+    FOREIGN KEY (episode_id) REFERENCES Episodes(episode_id)    ON DELETE CASCADE
+) ENGINE=InnoDB;";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Comments table created successfully<br>";
+} else {
+    echo "Error creating Comments table: " . $conn->error . "<br>";
+}
+
+
 $conn->close();
     ?>
 </body>
