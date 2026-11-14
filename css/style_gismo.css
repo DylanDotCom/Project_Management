@@ -36,11 +36,40 @@
  
 
 
-  .gismo{
+.gismo{
     font-size: 200px;
 }    
+#episodesCarousel .carousel-control-prev,
+#episodesCarousel .carousel-control-next {
+    width: 5%;
+}
+#episodesCarousel .carousel-control-prev-icon,
+#episodesCarousel .carousel-control-next-icon {
+    filter: invert(1);
+}
 
-.mask{
-    color: black;
-    background-color: rgba(192, 80, 255, 0.5);
+.card {
+  --bs-card-bg: #c050ff;
+ 
+  
+  background-color: var(--bs-card-bg);
+ 
+}
+
+
+
+.banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+#banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#log{
+  display: flex;
+  flex-direction: column;
 }
