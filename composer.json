@@ -1,0 +1,9 @@
+{
+    "name": "project_manage/workflowing",
+    "autoload": {
+        "psr-4": {
+            "ProjectManage\\Workflowing\\": "src/"
+        }
+    },
+    "require": {}
+}
