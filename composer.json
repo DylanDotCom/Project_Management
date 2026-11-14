@@ -1,5 +1,6 @@
 {
     "name": "project_manage/workflowing",
+    "description": "This is a website for browsing cartoons",
     "autoload": {
         "psr-4": {
             "ProjectManage\\Workflowing\\": "src/"
