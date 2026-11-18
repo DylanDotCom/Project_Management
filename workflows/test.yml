@@ -29,3 +29,6 @@ jobs:
  
       - name: Run integration tests
         run: npm run test:integration
+
+      - name: Run PHPUnit tests
+        run: ./vendor/bin/phpunit --testdox # Execute PHPUnit tests
