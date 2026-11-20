@@ -12,7 +12,7 @@ if($_SERVER ['REQUEST_METHOD'] == 'POST') {
 include 'db_connect.php';
 
 $username = isset($_POST['username']) ? htmlspecialchars($_POST['username']) : '';
-$password = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '';
+$email = isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '';
 $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : '';
 
 //Checking if username exists
