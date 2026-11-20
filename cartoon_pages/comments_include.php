@@ -1,7 +1,8 @@
 <?php
-// Usage: renderComments($conn, 'cartoon', $id)  or  renderComments($conn, 'episode', $id)
-function renderComments(mysqli $conn, string $type, int $targetId): void {
-    $column = $type === 'episode' ? 'episode_id' : 'cartoon_id'; // whitelist, never from user input
+
+function renderComments(mysqli $conn, string $type, int $targetId, string $action = 'post_comment.php'): void {
+    $columns = ['cartoon' => 'cartoon_id', 'episode' => 'episode_id', 'article' => 'article_id'];
+    $column  = $columns[$type] ?? 'cartoon_id';
 
     $stmt = $conn->prepare(
         "SELECT c.body, c.created_at, u.username
