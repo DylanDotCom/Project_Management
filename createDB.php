@@ -162,6 +162,7 @@ $sql = "CREATE TABLE Comments (
     cartoon_id INT NULL,
     episode_id INT NULL,
     body       TEXT NOT NULL,
+    article_id INT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id)    REFERENCES Users(user_id)          ON DELETE CASCADE,
     FOREIGN KEY (cartoon_id) REFERENCES CartoonSearch(id)       ON DELETE CASCADE,
