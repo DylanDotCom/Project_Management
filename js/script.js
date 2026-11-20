@@ -29,57 +29,38 @@ $(document).ready(function() {
 }); 
 
 //Search Page Code
-var cartoons = [];
+var searchTimer = null;
+var searchCounter = 0;
 
+function showHint(text) {
+    var out = document.getElementById("txtHint");
+    text = text.trim();
 
-function fetchCartoons() {
-    fetch("getCartoons.php")
-    .then(response => response.json())
-    .then(data => {
-        cartoons = data;
-        console.log("Cartoons array:", cartoons);
-    })
-    .catch(error => console.error("yufol: ", error));
-}
-
-
-
-fetchCartoons();
-
-var list_cartoons = []; 
- function showHint(substring) {
-    
-    list_cartoons = cartoons.filter(element => (element.toLowerCase()).includes(substring.toLowerCase()));
-    html_string = "";
-    if(list_cartoons.length == 1){
-        showHintInfo(list_cartoons[0]);
-    } else{
-         list_cartoons.forEach(element => {
-        html_string = html_string + "<img src='db_images/"+ element+".jpg' height = '300px' class = 'hover-pointer' onclick=\"showHintInfo('" + element + "')\";>" + element + "</span> | ";
-            }); 
-    }
-    document.getElementById("txtHint").innerHTML = html_string;
-}
-
-function showHintInfo(str) {
-    const hintElement = document.getElementById("txtHint");
-
-    if(str.length === 0) {
-        hintElement.innerHTML = ""; 
+    if (text.length === 0) {
+        out.innerHTML = "";
         return;
     }
 
-    fetch(`getSearch.php?q=${str}`)
-    .then(response => {
-        if(!response.ok) {
-            throw new Error(`HTTP error!: ${response.status}`);
-        }
-        return response.text();
-    })
-    .then(data => {
-        hintElement.innerHTML = data;
-    })
+    // wait until the person pauses typing so we don't send a request per keystroke
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(function () {
+        var myRequest = ++searchCounter;
 
+        fetch("getSearch.php?q=" + encodeURIComponent(text))
+            .then(function (response) {
+                if (!response.ok) throw new Error("HTTP error: " + response.status);
+                return response.text();
+            })
+            .then(function (html) {
+                // ignore slow answers from older searches
+                if (myRequest === searchCounter) out.innerHTML = html;
+            })
+            .catch(function (error) {
+                console.error("Search error:", error);
+                out.innerHTML = "<p>Error loading results.</p>";
+            });
+    }, 250);
+}
     .catch(error => {
         console.error("iube", error);
         hintElement.innerHTML = "Error loading hint.";})
