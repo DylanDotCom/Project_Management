@@ -14,14 +14,14 @@ let showLoginModal = () => {
 
     const modal_content= '<form id="login" onsubmit="return loginUser()">' +
     '<label for="username">Username:</label>' +
-    '<input type="text" id="username" name="username" required></br>' +
+    '<input type="text" id="username" name="username" required><br>' +
     '<label for="password">Password:</label>' +
-    '<input type="password" id="password" name="password" required></br>' +
+    '<input type="password" id="password" name="password" required><br>' +
     '<div id="button"> <input type="submit" value="Login"><br></div></form>' +
     '<div id="login_response"><br></div>' +
     '<button class="button3" onclick="showCreateUserModal()">Create User</button></div>';
     
-     modal.innerHTML = '<div class="modal" >' + modal_header + modal_content + '</div>';
+     modal.innerHTML =  modal_header + modal_content;
 }
 
 let showCreateUserModal = () => {
@@ -29,16 +29,16 @@ let showCreateUserModal = () => {
     modal.style.display= "block";
     document.getElementById("backdrop").style.display = "block";
 
-    modal_header = ' <img src="bootstrap/images/sc2.png" alt="avatar" width="70px">' + 
-    '<button class="close cursor" onclick="closeModal()">&times;</button> <br> <div class="modal-content">';
+    const modal_header = ' <img src="bootstrap/images/sc2.png" alt="avatar" width="70px">' + 
+    '<button class="close cursor" onclick="closeModal()">&times;</button> <br> <div class="modal_content">';
 
-    modal_content=' <form id="create" onsubmit="return createUser()">' +
+    const modal_content=' <form id="create" onsubmit="return createUser()">' +
     '<label for="username">Username:</label>' +
-    '<input type="text" id="username" name="username" required></br>' +
+    '<input type="text" id="username" name="username" required><br>' +
     '<label for="password">Password:</label>' +
-    '<input type="password" id="password" name="password" required></br>' +
+    '<input type="password" id="password" name="password" required><br>' +
     '<label for="email">Email:</label>' +
-    '<input type="text" id="create_email" name="email" required></br>' +
+    '<input type="text" id="create_email" name="email" required><br>' +
     '<div id="button"> <input type="submit" value="Create User"><br></div></form>' +
     '<div id="login_response2"><br></div>' +
      '<button class="button3" onclick="showLoginModal()">Login</button></div>';
@@ -74,6 +74,7 @@ function loginUser() {
     })
     .catch((error) => {
         console.error("Error: ", error);
+        document.getElementById("login_response").innerHTML = "Something went wrong. Please try again.";
     });
 
 
@@ -97,9 +98,11 @@ function createUser() {
     })
     .then((data) => {
         document.getElementById("login_response2").innerHTML = data;
+        
     })
     .catch((error) => {
         console.error("Error: ", error);
+        document.getElementById("login_response2").innerHTML = "Something went wrong. Please try again.";
     });
 
     return false;
