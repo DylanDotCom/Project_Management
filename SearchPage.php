@@ -14,6 +14,8 @@
 
          <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
    </head>
 	
    <body>
@@ -35,23 +37,43 @@
              
         </nav>
       
-		 <form>
-           <div>
-            <input type = "text" name = "users" onkeyup="showHint(this.value)">
-           </div>
-       </form>
+        <main class="flex-grow-1">
+		<form class="search-form" onsubmit="return false;">
+           
+            <input type = "text" name = "users" class="search-input"
+                            placeholder="Search cartoons..." aria-label="Search cartoons"
+                            onkeyup="showHint(this.value)">
+           
+        </form>
 
 	   <div class="container"><p>Suggestions: </p></div>
-        <div id="txtHintInfo" class="container"></div>
+       
         <div id="txtHint" class="container"></div>
 	
-    
+        </main>
 	
 
      <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Gismo 2026</p></div>
-        </footer>
+        <footer class="py-4 bg-dark">
+        <div class="container footer-row">
+
+          <div class="footer-side footer-left">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+
+          <a class="footer-logo" href="index.php">
+            <img src="img/gismo_logo.png" alt="Gismo logo">
+          </a>
+
+          <p class="footer-side footer-right m-0 text-white">copyright &copy; Gismo 2026</p>
+
+        </div>
+      </footer>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
