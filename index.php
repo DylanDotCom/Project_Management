@@ -21,7 +21,10 @@ include 'db_connect.php';
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
-   </head>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+   
+      
+    </head>
 	
    <body>
    
@@ -42,39 +45,80 @@ include 'db_connect.php';
             </div>
              
         </nav>
-        <!-- Background image -->
-        <div id="intro-example" class="p-5 text-center header_img">
-          <div class="mask">
-            <div class="d-flex justify-content-center align-items-center h-100">
-              <div class="text-black">
-                <h1 class="mb-3 freckle-face-regular gismo">GISMO</h1>
-                <h5 class="mb-4">
-                  Find cartoon you’ve once watched.
-                </h5>
-                <h5 class="mb-4">Save those you want to see.</h5>
-                <h5 class="mb-4">Tell your friends what’s good.</h5>
-                <a data-mdb-ripple-init class="btn btn-outline-light btn-lg m-2" href="userLoginPage.php"
-                  role="button" rel="nofollow" target="_blank">Login</a>
-                <a data-mdb-ripple-init class="btn btn-outline-light btn-lg m-2" href="SearchPage.php"
-                  target="_blank" role="button">Search</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Background image -->
+       
+        <section class="gismo_banner">
+          <video src="img/gismo_banner.mp4"  autoplay muted loop playsinline>Gismo Banner</video>
+        </section>
 
         </header>
 
+      <main>
+        <!-- VHS shelf -->
+        <section class="vhs-shelf-wrap" aria-label="Browse cartoons">
+          <div class="vhs-shelf">
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=$id' aria-label="Adventure Time">
+            <img src="vhs_image/adventure_time.png" alt="Adventure Time VHS tape">
+           </a>
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=6' aria-label="Fairly Odd Parents">
+            <img src="vhs_image/fairly_odd_parents.png" alt="Fairly Odd Parents VHS tape">
+           </a>
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=16' aria-label="Futurama">
+            <img src="vhs_image/futurama.png" alt="Futurama VHS tape">
+           </a>
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=3' aria-label="Gravity Falls">
+            <img src="vhs_image/gravity_falls.png" alt="Gravity Falls VHS tape">
+           </a>
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=10' aria-label="Kim Possible">
+            <img src="vhs_image/kim_possible.png" alt="Kim Possible VHS tape">
+           </a>
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=$id' aria-label="Looney Tunes">
+            <img src="vhs_image/looney_tunes.png" alt="Looney Tunes VHS tape">
+           </a>
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=20' aria-label="Phineas and Ferb">
+            <img src="vhs_image/phineas_and_ferb.png" alt="Phineas and Ferb VHS tape">
+           </a>
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=$id' aria-label="Powerpuff Girls">
+            <img src="vhs_image/powerpuff_girls.png" alt="Powerpuff Girls VHS tape">
+           </a>
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=$id' aria-label="Scooby Doo">
+            <img src="vhs_image/scooby_doo.png" alt="Scooby Doo VHS tape">
+           </a>
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=11' aria-label="Teen Titans">
+            <img src="vhs_image/teen_titans.png" alt="Teen Titans VHS tape">
+           </a>
+           <a class="vhs-tape" href='cartoon_pages/episodes.php?id=2' aria-label="The Simpsons">
+            <img src="vhs_image/the_simpsonbs.png" alt="The Simpsons VHS tape">
+           </a>
+          </div>
+        </section>
 
+      </main>
 	      
 
       
     
 
      <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Gismo 2026</p></div>
-        </footer>
+       <footer class="py-4 bg-dark">
+        <div class="container footer-row">
+
+          <div class="footer-side footer-left">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+
+          <a class="footer-logo" href="index.php">
+            <img src="img/gismo_logo.png" alt="Gismo logo">
+          </a>
+
+          <p class="footer-side footer-right m-0 text-white">copyright &copy; Gismo 2026</p>
+
+        </div>
+      </footer>
 
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
