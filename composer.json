@@ -1,0 +1,13 @@
+{
+    "name": "project_manage/workflowing",
+    "description": "This is a website for browsing cartoons",
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "ProjectManage\\Workflowing\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12"
+    }
+}

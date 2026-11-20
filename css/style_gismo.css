@@ -1,0 +1,211 @@
+
+ :root {
+            --purple-bar: #c2b0ff;
+            --sky-bg: #A4D9FF;
+            --avatar: #c050ff;
+        }
+ 
+        body {
+            background-color: var(--sky-bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+           
+        }
+
+.logo{
+  width: 150px;
+  height: 100px;
+}
+
+.profile-btn {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background-color: var(--avatar);
+            border: 5px solid #000;
+            display: block;
+            margin-left: 20px;
+}
+
+.freckle-face-regular {
+  font-family: "Freckle Face", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+ 
+
+
+.gismo{
+    font-size: 200px;
+}    
+#episodesCarousel .carousel-control-prev,
+#episodesCarousel .carousel-control-next {
+    width: 5%;
+}
+#episodesCarousel .carousel-control-prev-icon,
+#episodesCarousel .carousel-control-next-icon {
+    filter: invert(1);
+}
+
+.card {
+  --bs-card-bg: #c050ff;
+ 
+  
+  background-color: var(--bs-card-bg);
+ 
+}
+
+
+
+.banner {
+  width: 100%;
+  overflow: hidden;
+}
+
+#banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#log{
+  display: flex;
+  flex-direction: column;
+}
+.vhs-tape { transition: transform .25s cubic-bezier(.3,1.4,.5,1), filter .25s; }
+.vhs-tape:hover, .vhs-tape:focus-visible {
+          transform: translateY(-30px) rotate(-1.5deg);
+          filter: drop-shadow(0 14px 14px rgba(0,0,0,.6));
+          outline: none;
+  }
+.vhs-shelf-wrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 560px;
+  background-color: #c050ff;
+  padding: 40px 5px 0;
+  border: 5px solid #060210;
+}
+
+.vhs-shelf{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  
+}
+
+.vhs-tape{
+  flex: 1 0 80px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.vhs-tape img{
+  display:block;
+  width: 80px;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  margin-top: 0;
+  margin-right: 10px;
+}
+
+.gismo_banner{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.gismo_banner video{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-side {
+  flex: 1;                      /* equal width on both sides keeps the logo centered */
+}
+
+.footer-left  { text-align: left; }
+.footer-right { text-align: right; }
+
+.footer-logo img {
+  height: 50px;                 /* logo size */
+  width: auto;
+}
+
+.btn-floating {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* phones: stack everything in the center */
+@media (max-width: 576px) {
+  .footer-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-side { flex: none; text-align: center; }
+  .footer-logo { order: -1; }   /* logo on top */
+}
+
+#backToTop {
+  display: none;              /* Hidden by default */
+  position: fixed;            /* Sticky/fixed position */
+  bottom: 20px;               /* Distance from bottom */
+  right: 30px;                /* Distance from right */
+  z-index: 99;                /* On top of other elements */
+  background-color: #a211f6;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 40%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+#backToTop:hover {
+  background-color: #c050ff;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;   /* centers the box horizontally */
+  margin: 40px auto 10px;
+  padding: 0 16px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;          /* how wide the box gets */
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #b25cff;
+  border-radius: 999px;      /* rounded, to match the Gismo look */
+  outline: none;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 3px rgba(178, 92, 255, 0.35);
+}
+
+#txtHint{
+  display: flex;
+}
