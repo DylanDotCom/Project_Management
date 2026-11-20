@@ -1,3 +1,6 @@
+<?php
+include '../db_connect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,27 +8,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Blog</title>
+        <title>Blog | Gismo</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/style_gismo.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+        
     </head>
     <body>
         <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#!"><img src="images/gismo_logo.png" alt="Logo"class="img-fluid logo"/></a>
+                <a class="navbar-brand" href="../index.php"><img src="images/gismo_logo.png" alt="Logo"class="img-fluid logo"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Search</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Capsule</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link"  href="../index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../SearchPage.php">Search</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.php">Blog</a></li>
                     </ul>
+                     
                 </div>
+                <a href="../userLoginPage.php" class="profile-btn" aria-label="Profile"></a>
             </div>
+             
         </nav>
         <!-- Page header with logo and tagline-->
         <header class="py-5 bg-light border-bottom mb-4">
@@ -43,12 +52,12 @@
                 <div class="col-lg-8">
                     <!-- Featured blog post-->
                     <div class="card mb-4">
-                        <a href="avatar_pairings.html"><img class="card-img-top avatar" src="images/avatar_pairings.jpg" alt="Avatar Pairings" /></a>
+                        <a href="avatar_pairings.php"><img class="card-img-top avatar" src="images/avatar_pairings.jpg" alt="Avatar Pairings" /></a>
                         <div class="card-body">
                             <div class="small text-muted">November 1, 2026</div>
                             <h2 class="card-title">Avatar pairings</h2>
                             <p class="card-text">Most popular Avatar pairings! Would you agree? Or you have other preferences?</p>
-                            <a class="btn btn-primary" href="avatar_pairings.html">Read more →</a>
+                            <a class="btn btn-primary" href="avatar_pairings.php">Read more →</a>
                         </div>
                     </div>
                     <!-- Nested row for non-featured blog posts-->
@@ -56,44 +65,44 @@
                         <div class="col-lg-6">
                             <!-- Blog post-->
                             <div class="card mb-4">
-                                <a href="scooby_doo.html"><img class="card-img-top scooby" src="images/scooby_natural.jpg" alt="Scooby-Natural" /></a>
+                                <a href="scooby_doo.php"><img class="card-img-top scooby" src="images/scooby_natural.jpg" alt="Scooby-Natural" /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">November 1, 2026</div>
                                     <h2 class="card-title h4">Scooby-Doo vs Winchesters</h2>
                                     <p class="card-text">Zoinks! Scooby-Doo and Winchesters at the same place... I am scared to imagine how haunted that place is!</p>
-                                    <a class="btn btn-primary" href="scooby_doo.html">Read more →</a>
+                                    <a class="btn btn-primary" href="scooby_doo.php">Read more →</a>
                                 </div>
                             </div>
                             <!-- Blog post-->
                             <div class="card mb-4">
-                                <a href="vampires.html"><img class="card-img-top vampires" src="images/vampires_school.jpg" alt="The school for vampires" /></a>
+                                <a href="vampires.php"><img class="card-img-top vampires" src="images/vampires_school.jpg" alt="The school for vampires" /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">November 1, 2026</div>
                                     <h2 class="card-title h4">The School for Vampires niche show?</h2>
                                     <p class="card-text">Have you ever seen a "Romeo and Juliet" story but with vampiric vibes?</p>
-                                    <a class="btn btn-primary" href="vampires.html">Read more →</a>
+                                    <a class="btn btn-primary" href="vampires.php">Read more →</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <!-- Blog post-->
                             <div class="card mb-4">
-                                <a href="adv_time.html"><img class="card-img-top mushroom" src="images/adv_war.jpg" alt="Aventure Time Mushroom War" /></a>
+                                <a href="adv_time.php"><img class="card-img-top mushroom" src="images/adv_war.jpg" alt="Aventure Time Mushroom War" /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">November 1, 2026</div>
                                     <h2 class="card-title h4">Does Adventure Time actually portray an alternate end to the cold war?</h2>
                                     <p class="card-text">The conspiracy theory of Cold War picture in Adventure Time... Is it true or just completely off the wall?</p>
-                                    <a class="btn btn-primary" href="adv_time.html">Read more →</a>
+                                    <a class="btn btn-primary" href="adv_time.php">Read more →</a>
                                 </div>
                             </div>
                             <!-- Blog post-->
                             <div class="card mb-4">
-                                <a href="bill_cipher.html"><img class="card-img-top cipher" src="images/bill_cipher.jpg" alt="Bill Cipher" /></a>
+                                <a href="bill_cipher.php"><img class="card-img-top cipher" src="images/bill_cipher.jpg" alt="Bill Cipher" /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">November 1, 2026</div>
                                     <h2 class="card-title h4">Do you have a feeling that Bill Ciper is still alive?</h2>
                                     <p class="card-text">At the end of Gravity Falls, we're lead to believe that Bill Cipher is gone for good. But what if that weren't the case?</p>
-                                    <a class="btn btn-primary" href="bill_cipher.html">Read more →</a>
+                                    <a class="btn btn-primary" href="bill_cipher.php">Read more →</a>
                                 </div>
                             </div>
                         </div>
@@ -174,9 +183,29 @@
             </div>
         </div>
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Gismo 2026</p></div>
-        </footer>
+        <footer class="py-4 bg-dark">
+        <div class="container footer-row">
+
+          <div class="footer-side footer-left">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+
+          <a class="footer-logo" href="../index.php">
+            <img src="../img/gismo_logo.png" alt="Gismo logo">
+          </a>
+
+          <p class="footer-side footer-right m-0 text-white">copyright &copy; Gismo 2026</p>
+
+        </div>
+      </footer>
+        
+
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
