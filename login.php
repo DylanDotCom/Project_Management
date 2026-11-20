@@ -1,4 +1,6 @@
 <?php
+    header('Content-Type: application/json');
+
    session_start();
 
    include 'db_connect.php';
@@ -33,9 +35,7 @@
             'message' => 'Login successful!',
             'user_id' => $user_id,
         ]);
-    }
-
-    else {
+    }else {
         echo json_encode([
             'success' => false,
             'message' => 'Incorrect Password',
