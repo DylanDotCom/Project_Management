@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    include '../db_connect.php';
+    require '../cartoon_pages/comments_include.php';
+
+   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,24 +18,28 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+         <link href="../css/style_gismo.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+           
     </head>
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#!"><img src="images/gismo_logo.png" alt="Logo"class="img-fluid logo"/></a>
+                <a class="navbar-brand" href="../index.php"><img src="images/gismo_logo.png" alt="Logo"class="img-fluid logo"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../SearchPage.php">Search</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Capsule</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.php">Blog</a></li>
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav><br>
        
+        <div class="container"><a href="blog.php">&larr; Back to All Articles</a></div>
         
         <!-- Page content-->
         <div class="container">
@@ -129,10 +141,39 @@
                 </div>
             </div>
         </div>
+
+
+
+        <!--Comment Section-->
+            <section class="mb-5" id="comments">
+                 <?php renderComments($conn, 'article', 1, '../cartoon_pages/post_comment.php'); ?>
+             </section>
+
+
+
+
+
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Gismo 2026</p></div>
-        </footer>
+        <footer class="py-4 bg-dark">
+        <div class="container footer-row">
+
+          <div class="footer-side footer-left">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+
+          <a class="footer-logo" href="../index.php">
+            <img src="../img/gismo_logo.png" alt="Gismo logo">
+          </a>
+
+          <p class="footer-side footer-right m-0 text-white">copyright &copy; Gismo 2026</p>
+
+        </div>
+      </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
