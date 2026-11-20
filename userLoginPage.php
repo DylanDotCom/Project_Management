@@ -1,7 +1,13 @@
+<?php
+    include 'db_connect.php';
+
+    session_start();
+?>
+
 <!DOCTYPE html> 
 <html>
    <head>
-   <meta charset="utf-8">
+   
      <meta charset="utf-8">
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="bootstrap/js/bootstrap.js"></script>
@@ -17,6 +23,7 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
    </head>
 	
    <body>
@@ -39,31 +46,47 @@
              
         </nav>
     </header>
-    <main>
-        <form id="sockshow_form">
-
-       </form>
-      <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-    <span id="user_name">
+   
+        
+    <main class="flex-grow-1">
+        <span id="user_name">
         <?php
           if(isset($_SESSION["username"]) && !empty($_SESSION["username"])){
+            echo htmlspecialchars($_SESSION['username']);
           }
           
         ?>
         </span>&nbsp;&nbsp;
-            <div id="backdrop"></div>
+        <div id="backdrop"></div>
         <div id="login_modal" class ="box3 div-border div-no-border form-container"></div>
 	  
         <img src="bootstrap/images/sc1.png" width="275px">
         <button class ="button3" onclick="showLoginModal()">Login</button>
-    </div>
-    <div id="display_user"></div>
+   
+        <div id="display_user"></div>
 	</main>
 
-	<footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Gismo 2026</p></div>
-    </footer>
-	   
-     <script src = "js/script.js" defer></script>
+	<footer class="py-4 bg-dark">
+        <div class="container footer-row">
+
+          <div class="footer-side footer-left">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+
+          <a class="footer-logo" href="index.php">
+            <img src="img/gismo_logo.png" alt="Gismo logo">
+          </a>
+
+          <p class="footer-side footer-right m-0 text-white">copyright &copy; Gismo 2026</p>
+
+        </div>
+      </footer>
+	
+    
     <script src = "js/loginScript.js" defer></script>
 </body>
