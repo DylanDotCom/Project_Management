@@ -7,7 +7,7 @@
 
     $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-    $stmt = $conn->prepare("SELECT title, year, creator, genre, image_path FROM CartoonSearch WHERE id = ?");
+    $stmt = $conn->prepare("SELECT title, year, creator, genre, image_path, rating FROM CartoonSearch WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $cartoon = $stmt->get_result()->fetch_assoc();
@@ -34,9 +34,11 @@
             <meta charset="UTF-8">
             <title><?= htmlspecialchars($cartoon['title']) ?> | Gismo</title>
 
+            <link href="css/rating.css" rel="stylesheet">
             <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
 
              <link href="../css/style_gismo.css" rel="stylesheet">
+             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
            
         </head>
         <body>
@@ -60,21 +62,41 @@
              <div class="container my-4">
                 <a href="../SearchPage.php">&larr; Back to cartoons</a>
 
+            <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 my-3">
+                <!--Image and Title -->
                 <div class="d-flex align-items-center gap-3 my-3">
-                    <?php if (!empty($cartoon['image_path'])): ?>
-                        <img src="../<?= htmlspecialchars($cartoon['image_path']) ?>"
-                            alt="<?= htmlspecialchars($cartoon['title']) ?>"
-                            style="width:90px; height:90px; object-fit:contain;">
-                    <?php endif; ?>
-                    <div>
-                        <h1 class="mb-1"><?= htmlspecialchars($cartoon['title']) ?></h1>
-                        <p class="text-muted mb-0">
-                            <?= (int)$cartoon['year'] ?> &middot;
-                            <?= htmlspecialchars($cartoon['creator']) ?> &middot;
-                            <?= htmlspecialchars($cartoon['genre']) ?>
-                        </p>
-                    </div>
+                                <?php if (!empty($cartoon['image_path'])): ?>
+                                    <img src="../<?= htmlspecialchars($cartoon['image_path']) ?>"
+                                        alt="<?= htmlspecialchars($cartoon['title']) ?>"
+                                        style="width:90px; height:90px; object-fit:contain;">
+                                <?php endif; ?>
+                                <div>
+                                    <h1 class="mb-1"><?= htmlspecialchars($cartoon['title']) ?></h1>
+                                    <p class="text-muted mb-0">
+                                        <?= (int)$cartoon['year'] ?> &middot;
+                                        <?= htmlspecialchars($cartoon['creator']) ?> &middot;
+                                        <?= htmlspecialchars($cartoon['genre']) ?> &middot;
+                                        <?= htmlspecialchars($cartoon['rating']) ?>
+                                    </p>
+                                </div>
+                                
                 </div>
+                <!-- RATING -->
+                    <div class="card px-2 py-1 text-center flex-shrink-0" style="width:auto;">
+                        <h3 class="small fw-semibold">Choose Your Rating</h3>
+                            <div class="d-flex justify-content-center gap-1" style="font-size:1.1rem; line-height:1.2;">
+                                <span onclick="gfg(1)" class="star">★</span>
+                                <span onclick="gfg(2)" class="star">★</span>
+                                <span onclick="gfg(3)" class="star">★</span>
+                                <span onclick="gfg(4)" class="star">★</span>
+                                <span onclick="gfg(5)" class="star">★</span>
+                                <h4 id="output" class="small text-muted">Rating is: 0/5</h4>
+                            </div>
+                            </div>
+
+            </div>
+
+                
                  <h2>Episodes</h2>
 
         <?php
@@ -135,10 +157,28 @@
         <?php renderComments($conn, 'cartoon', $id); ?>
     </div>
 
-    <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Gismo 2026</p></div>
-    </footer>
+    <footer class="py-4 bg-dark">
+        <div class="container footer-row">
+
+          <div class="footer-side footer-left">
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://rb.gy/k8o434" role="button" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+
+          <a class="footer-logo" href="../index.php">
+            <img src="../img/gismo_logo.png" alt="Gismo logo">
+          </a>
+
+          <p class="footer-side footer-right m-0 text-white">copyright &copy; Gismo 2026</p>
+
+        </div>
+      </footer>
     <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="js/rating.js"></script>
 </body>
 </html>
 <?php
